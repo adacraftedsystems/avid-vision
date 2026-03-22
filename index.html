@@ -385,15 +385,142 @@ h2 {
 ::-webkit-scrollbar-track { background: var(--navy); }
 ::-webkit-scrollbar-thumb { background: var(--navy3); border-radius: 3px; }
 
+/* ── MOBILE RESPONSIVE ── */
 @media (max-width: 900px) {
-  .hero { padding: 100px 24px 60px; }
+
+  /* Global */
+  body { overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  img, svg, iframe { max-width: 100%; }
+
+  /* Nav */
+  .nav { padding: 0 16px; }
+  .nav-sub { display: none; }
+  .nav-links { display: none; }
+
+  /* Hero */
+  .hero { padding: 90px 20px 60px; min-height: auto; }
   .hero-visual { display: none; }
-  .section, .section-sm, .full-bleed { padding: 60px 24px; }
-  .div-line { margin: 0 24px; }
+  .hero h1 { font-size: 36px; letter-spacing: -1px; }
+  .hero-sub { font-size: 15px; }
+  .hero-stats { flex-wrap: wrap; gap: 20px; padding: 20px; }
+  .hero-ctas { flex-direction: column; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+
+  /* Sections */
+  .section, .section-sm, .full-bleed { padding: 60px 20px; }
+  .cta-section { padding: 60px 20px; }
+  .div-line { margin: 0 20px; }
+
+  /* Typography */
+  h2 { font-size: 28px; letter-spacing: -.5px; }
+  .section-sub { font-size: 15px; margin-bottom: 36px; }
+
+  /* Grids → single column */
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+
+  /* Stats row */
   .stats-row { grid-template-columns: 1fr 1fr; }
-  h2 { font-size: 32px; }
-  .nav { padding: 0 20px; }
+  .stat-val { font-size: 30px; }
+
+  /* Revenue table — make scrollable */
+  .rev-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .rev-table { min-width: 560px; }
+
+  /* Competitor table */
+  .comp-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .comp-table { min-width: 520px; }
+
+  /* Hero mini cards */
+  .hero-mini-cards { grid-template-columns: 1fr 1fr; }
+
+  /* Problem banner */
+  .problem-banner { flex-direction: column; gap: 12px; padding: 20px; }
+
+  /* AI features */
+  .ai-feature { flex-direction: column; gap: 10px; }
+  .ai-feature-ico { width: 36px; height: 36px; font-size: 17px; }
+
+  /* App preview stats */
+  .app-stats { grid-template-columns: 1fr 1fr; }
+
+  /* Timeline */
+  .timeline-wrap { padding-left: 24px; }
+
+  /* CTA section */
+  .cta-section h2 { font-size: 32px; }
+  .cta-btns { flex-direction: column; align-items: center; }
+  .cta-btn { width: 100%; justify-content: center; max-width: 320px; }
+
+  /* Inline grid overrides — force single column on mobile */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns: repeat(2"],
+  [style*="grid-template-columns: repeat(3"],
+  [style*="grid-template-columns: repeat(4"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Inline flex rows — wrap on mobile */
+  [style*="display:flex"][style*="gap"] {
+    flex-wrap: wrap;
+  }
+
+  /* Foundation stats grid */
+  [style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Path card stat grids */
+  [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Remove fixed widths on mobile */
+  [style*="width:420px"],
+  [style*="min-width:180px"],
+  [style*="min-width:140px"],
+  [style*="width:200px"] {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Arch center layout */
+  .arch-center { flex-direction: column; }
+  .arch-hub { width: 100%; }
+  .arch-channels { width: 100%; }
+  .arch-row { flex-direction: column; gap: 12px; }
+  .arch-arrow { transform: rotate(90deg); }
+
+  /* App preview */
+  .app-body { padding: 16px; }
+  .app-stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+
+  /* Competitor/revenue table wrappers */
+  .comp-row { min-width: 500px; }
+
+  /* Nav CTA */
+  .nav-cta { font-size: 12px; padding: 5px 12px; }
+
+  /* Quote block */
+  .quote-block { padding: 20px; }
+  .quote-text { font-size: 16px; }
+
+  /* Hero stats */
+  .hero-stats > div { flex: 1; min-width: 80px; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 30px; }
+  h2 { font-size: 24px; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  .stat-val { font-size: 26px; }
+  .hero-stats { gap: 12px; padding: 16px; }
+  .nav-cta { display: none; }
+  .section, .section-sm { padding: 48px 16px; }
+  .opp-num { display: none; }
+  .card { padding: 20px; }
+  .opp-card { padding: 20px; }
+  .app-stats { grid-template-columns: 1fr 1fr; }
 }
 </style>
 </head>
@@ -924,7 +1051,8 @@ h2 {
   <h2>Where Avid wins in an<br>AI-first market.</h2>
   <p class="section-sub">Robo-advisors have low cost. Big firms have brand. You have something neither can replicate.</p>
 
-  <div style="background:var(--navy2);border:1px solid var(--sep);border-radius:16px;overflow:hidden;margin-bottom:40px;">
+  <div class="comp-table-wrap" style="border-radius:16px;overflow:hidden;margin-bottom:40px;border:1px solid var(--sep);">
+  <div style="background:var(--navy2);min-width:520px;">
     <div class="comp-row" style="border-bottom:1px solid var(--sep);">
       <div class="comp-header">Provider</div>
       <div class="comp-header">Human + AI Hybrid</div>
@@ -968,6 +1096,7 @@ h2 {
       <div class="comp-cell"><span class="check-y">✓</span></div>
     </div>
   </div>
+  </div>
 </div>
 
 <div class="div-line"></div>
@@ -979,7 +1108,7 @@ h2 {
     <h2>What the business looks<br>like at full <em style="color:var(--green);">build-out.</em></h2>
     <p class="section-sub">Conservative projections. Multiple streams. Most are additive on your existing practice — not replacements.</p>
 
-    <table class="rev-table" style="margin-bottom:40px;">
+    <div class="rev-table-wrap"><table class="rev-table" style="margin-bottom:40px;">
       <thead>
         <tr>
           <th>Revenue Stream</th>
@@ -1040,7 +1169,7 @@ h2 {
           <td class="rev-highlight" style="font-size:17px;">+$1.3M+</td>
         </tr>
       </tbody>
-    </table>
+    </table></div>
   </div>
 </section>
 
