@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avid Planning — The AI-Powered Future | A Vision for Jack Arnold</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap');
+
+:root {
+  --navy:   #0a1628;
+  --navy2:  #0f1f3d;
+  --navy3:  #162a52;
+  --teal:   #0d9488;
+  --teal2:  #14b8a6;
+  --teal3:  rgba(13,148,136,.12);
+  --gold:   #f59e0b;
+  --gold2:  rgba(245,158,11,.12);
+  --white:  #ffffff;
+  --t1:     rgba(255,255,255,.92);
+  --t2:     rgba(255,255,255,.6);
+  --t3:     rgba(255,255,255,.28);
+  --sep:    rgba(255,255,255,.08);
+  --green:  #10b981;
+  --blue:   #3b82f6;
+  --purple: #8b5cf6;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--navy);
+  color: var(--t1);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* NAV */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center;
+  padding: 0 48px; height: 60px;
+  background: rgba(10,22,40,.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--sep);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--teal2); letter-spacing: -.3px;
+}
+.nav-sub { font-size: 12px; color: var(--t3); margin-left: 8px; }
+.nav-links { display: flex; gap: 4px; margin-left: auto; }
+.nav-link {
+  font-size: 12.5px; color: var(--t2);
+  padding: 5px 12px; border-radius: 6px;
+  cursor: pointer; transition: all .15s; text-decoration: none;
+}
+.nav-link:hover { color: var(--t1); background: rgba(255,255,255,.06); }
+
+/* HERO */
+.hero {
+  min-height: 100vh; display: flex; align-items: center;
+  padding: 100px 80px 80px;
+  background:
+    radial-gradient(ellipse 80% 60% at 80% 50%, rgba(13,148,136,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 80% at 10% 70%, rgba(59,130,246,.06) 0%, transparent 60%),
+    var(--navy);
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero-content { max-width: 650px; position: relative; z-index: 1; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--teal3); border: 1px solid rgba(13,148,136,.3);
+  color: var(--teal2); font-size: 11.5px; font-weight: 700;
+  padding: 6px 16px; border-radius: 20px; margin-bottom: 28px;
+  letter-spacing: .5px; text-transform: uppercase;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(44px, 5.5vw, 68px);
+  font-weight: 800; line-height: 1.06;
+  letter-spacing: -1.5px; margin-bottom: 24px;
+}
+.hero h1 em { color: var(--teal2); font-style: normal; }
+.hero-sub {
+  font-size: 17px; color: var(--t2); line-height: 1.75;
+  margin-bottom: 40px; max-width: 540px;
+}
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--teal); color: #fff;
+  font-size: 14px; font-weight: 700; padding: 13px 28px;
+  border-radius: 9px; text-decoration: none; transition: all .15s;
+}
+.btn-primary:hover { background: var(--teal2); transform: translateY(-1px); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.06); color: var(--t1);
+  border: 1px solid var(--sep); font-size: 14px; font-weight: 600;
+  padding: 13px 28px; border-radius: 9px; text-decoration: none; transition: all .15s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,.1); }
+.hero-visual {
+  position: absolute; right: 80px; top: 50%; transform: translateY(-50%);
+  width: 420px; z-index: 1;
+}
+.hero-card {
+  background: var(--navy2); border: 1px solid var(--sep);
+  border-radius: 16px; padding: 24px; margin-bottom: 14px;
+  backdrop-filter: blur(20px);
+}
+.hero-card-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--t3); margin-bottom: 10px; }
+.hero-card-val { font-size: 30px; font-weight: 800; letter-spacing: -1px; color: var(--teal2); }
+.hero-card-sub { font-size: 12.5px; color: var(--t2); margin-top: 3px; }
+.hero-mini-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.mini-card {
+  background: var(--navy2); border: 1px solid var(--sep);
+  border-radius: 12px; padding: 16px; text-align: center;
+}
+.mini-val { font-size: 22px; font-weight: 800; letter-spacing: -.5px; }
+.mini-lbl { font-size: 10.5px; color: var(--t2); text-transform: uppercase; letter-spacing: .3px; margin-top: 2px; }
+
+/* SECTION WRAPPER */
+.section { padding: 100px 80px; max-width: 1300px; margin: 0 auto; }
+.section-sm { padding: 80px 80px; max-width: 1300px; margin: 0 auto; }
+.full-bleed { padding: 80px; }
+
+/* SECTION HEADERS */
+.tag {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--teal2); margin-bottom: 14px;
+}
+.tag::before { content: ''; width: 18px; height: 2px; background: var(--teal2); border-radius: 1px; }
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800; letter-spacing: -1px;
+  line-height: 1.1; margin-bottom: 16px;
+}
+.section-sub { font-size: 16px; color: var(--t2); max-width: 560px; margin-bottom: 56px; line-height: 1.7; }
+
+/* DIVIDER */
+.div-line { height: 1px; background: var(--sep); margin: 0 80px; }
+
+/* CARDS */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+
+.card {
+  background: var(--navy2); border: 1px solid var(--sep);
+  border-radius: 16px; padding: 28px;
+  transition: border-color .2s, transform .2s;
+}
+.card:hover { border-color: rgba(13,148,136,.25); transform: translateY(-2px); }
+.card-ico { font-size: 32px; margin-bottom: 16px; }
+.card-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.card-desc { font-size: 13.5px; color: var(--t2); line-height: 1.6; }
+.card-rev {
+  margin-top: 16px; padding-top: 14px;
+  border-top: 1px solid var(--sep);
+  font-size: 12px; font-weight: 700; color: var(--teal2);
+}
+
+/* OPPORTUNITY CARDS */
+.opp-card {
+  background: var(--navy2); border: 1px solid var(--sep);
+  border-radius: 16px; padding: 28px; position: relative;
+  overflow: hidden; transition: border-color .2s;
+}
+.opp-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.opp-card.teal::before  { background: linear-gradient(90deg, var(--teal), var(--teal2)); }
+.opp-card.gold::before  { background: linear-gradient(90deg, var(--gold), #fcd34d); }
+.opp-card.blue::before  { background: linear-gradient(90deg, var(--blue), #60a5fa); }
+.opp-card.purple::before { background: linear-gradient(90deg, var(--purple), #a78bfa); }
+.opp-card.green::before { background: linear-gradient(90deg, var(--green), #34d399); }
+.opp-card:hover { border-color: rgba(255,255,255,.12); transform: translateY(-2px); }
+.opp-num {
+  position: absolute; top: 20px; right: 20px;
+  font-size: 48px; font-weight: 900; color: rgba(255,255,255,.04);
+  line-height: 1; font-family: 'Playfair Display', serif;
+}
+.opp-ico { font-size: 28px; margin-bottom: 14px; }
+.opp-title { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+.opp-tag {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .5px;
+  padding: 3px 9px; border-radius: 5px; margin-bottom: 12px;
+}
+.tag-easy   { background: rgba(16,185,129,.12); color: var(--green); }
+.tag-medium { background: rgba(245,158,11,.12);  color: var(--gold); }
+.tag-big    { background: rgba(139,92,246,.12);  color: var(--purple); }
+.tag-pivot  { background: rgba(59,130,246,.12);  color: var(--blue); }
+.opp-desc { font-size: 13.5px; color: var(--t2); line-height: 1.6; }
+.opp-revenue {
+  margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--sep);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.opp-rev-val { font-size: 15px; font-weight: 800; color: var(--teal2); }
+.opp-rev-lbl { font-size: 11px; color: var(--t3); text-transform: uppercase; }
+.opp-timeline { font-size: 11px; color: var(--t3); }
+
+/* TIMELINE */
+.timeline-wrap {
+  position: relative; padding-left: 40px;
+}
+.timeline-wrap::before {
+  content: ''; position: absolute; left: 14px; top: 8px; bottom: 8px;
+  width: 2px; background: linear-gradient(180deg, var(--teal), var(--blue), var(--purple));
+  border-radius: 1px;
+}
+.tl-item { margin-bottom: 44px; position: relative; }
+.tl-dot {
+  position: absolute; left: -33px; top: 4px;
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 2px solid var(--navy); z-index: 1;
+}
+.tl-phase {
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .7px; color: var(--t3); margin-bottom: 4px;
+}
+.tl-title {
+  font-size: 20px; font-weight: 800; margin-bottom: 10px;
+  letter-spacing: -.3px;
+}
+.tl-tasks { display: flex; flex-direction: column; gap: 6px; }
+.tl-task {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13.5px; color: var(--t2); line-height: 1.5;
+}
+.tl-task::before { content: '→'; color: var(--teal2); flex-shrink: 0; font-weight: 700; }
+
+/* AI FEATURE CARDS */
+.ai-feature {
+  background: var(--navy2); border: 1px solid var(--sep);
+  border-radius: 14px; padding: 22px 24px;
+  display: flex; align-items: flex-start; gap: 16px;
+  transition: border-color .2s;
+}
+.ai-feature:hover { border-color: rgba(13,148,136,.2); }
+.ai-feature-ico {
+  width: 42px; height: 42px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+  background: var(--teal3); border: 1px solid rgba(13,148,136,.2);
+}
+.ai-feature-title { font-size: 14.5px; font-weight: 700; margin-bottom: 5px; }
+.ai-feature-desc { font-size: 13px; color: var(--t2); line-height: 1.55; }
+.ai-new { font-size: 10px; font-weight: 700; color: var(--teal2); text-transform: uppercase; letter-spacing: .4px; margin-left: 8px; background: var(--teal3); padding: 2px 7px; border-radius: 4px; }
+
+/* REVENUE MODEL */
+.rev-table { width: 100%; border-collapse: separate; border-spacing: 0 8px; }
+.rev-table thead th {
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .7px; color: var(--t3); padding: 10px 20px;
+  text-align: left;
+}
+.rev-table tbody tr {
+  background: var(--navy2); border-radius: 10px;
+  transition: background .15s;
+}
+.rev-table tbody tr:hover { background: var(--navy3); }
+.rev-table td {
+  padding: 16px 20px; font-size: 14px; border: none;
+}
+.rev-table td:first-child { border-radius: 10px 0 0 10px; font-weight: 600; }
+.rev-table td:last-child { border-radius: 0 10px 10px 0; }
+.rev-tag {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .3px;
+  padding: 2px 8px; border-radius: 4px;
+}
+.rev-highlight { color: var(--teal2); font-weight: 800; }
+.rev-total-row td { font-size: 15px; font-weight: 800; }
+
+/* QUOTE BLOCK */
+.quote-block {
+  background: linear-gradient(135deg, var(--navy2), var(--navy3));
+  border: 1px solid rgba(13,148,136,.2);
+  border-left: 4px solid var(--teal2);
+  border-radius: 0 14px 14px 0;
+  padding: 28px 32px; margin: 40px 0;
+}
+.quote-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; color: var(--t1); line-height: 1.5;
+  margin-bottom: 12px;
+}
+.quote-attr { font-size: 13px; color: var(--t3); }
+
+/* APP MOCKUP */
+.app-preview {
+  background: var(--navy2); border: 1px solid var(--sep);
+  border-radius: 20px; padding: 0; overflow: hidden;
+}
+.app-chrome {
+  background: var(--navy3); padding: 12px 20px;
+  display: flex; align-items: center; gap: 8px;
+  border-bottom: 1px solid var(--sep);
+}
+.chrome-dot { width: 10px; height: 10px; border-radius: 50%; }
+.app-body { padding: 24px; }
+.app-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 20px;
+}
+.app-title { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+.app-sub { font-size: 12px; color: var(--t2); }
+.app-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-bottom: 20px; }
+.app-stat {
+  background: var(--navy); border: 1px solid var(--sep);
+  border-radius: 10px; padding: 14px; text-align: center;
+}
+.app-stat-val { font-size: 20px; font-weight: 800; }
+.app-stat-lbl { font-size: 10px; color: var(--t2); margin-top: 2px; text-transform: uppercase; }
+.app-list { display: flex; flex-direction: column; gap: 8px; }
+.app-item {
+  background: var(--navy); border: 1px solid var(--sep);
+  border-radius: 9px; padding: 12px 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+.app-item-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.app-item-name { font-size: 13px; font-weight: 600; flex: 1; }
+.app-item-val { font-size: 12px; color: var(--t2); }
+.app-item-badge {
+  font-size: 10px; font-weight: 700; padding: 2px 7px;
+  border-radius: 4px; text-transform: uppercase;
+}
+
+/* COMPETITOR TABLE */
+.comp-table { width: 100%; }
+.comp-row {
+  display: grid; grid-template-columns: 1.5fr repeat(4,1fr);
+  gap: 0; align-items: center;
+}
+.comp-header {
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .7px; color: var(--t3); padding: 10px 16px;
+}
+.comp-cell {
+  padding: 14px 16px; border-bottom: 1px solid var(--sep);
+  font-size: 13.5px;
+}
+.comp-row:last-child .comp-cell { border-bottom: none; }
+.comp-row:hover .comp-cell { background: rgba(255,255,255,.02); }
+.comp-name { font-weight: 700; }
+.check-y { color: var(--teal2); font-size: 16px; }
+.check-n { color: rgba(255,255,255,.2); font-size: 16px; }
+.check-p { color: var(--gold); font-size: 16px; }
+.avid-row .comp-cell { background: rgba(13,148,136,.04); }
+.avid-row .comp-name { color: var(--teal2); }
+
+/* STATS ROW */
+.stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--sep); border: 1px solid var(--sep); border-radius: 16px; overflow: hidden; }
+.stat-box { background: var(--navy2); padding: 32px 24px; text-align: center; }
+.stat-val { font-size: 42px; font-weight: 900; letter-spacing: -2px; line-height: 1; }
+.stat-lbl { font-size: 12px; color: var(--t2); text-transform: uppercase; letter-spacing: .5px; margin-top: 6px; }
+.stat-note { font-size: 11px; color: var(--t3); margin-top: 4px; }
+
+/* CALL TO ACTION */
+.cta-section {
+  text-align: center; padding: 100px 80px;
+  background: linear-gradient(135deg, rgba(13,148,136,.06), rgba(59,130,246,.04));
+  border-top: 1px solid var(--sep);
+}
+.cta-section h2 { font-size: 52px; letter-spacing: -2px; margin-bottom: 20px; }
+.cta-section p { font-size: 17px; color: var(--t2); margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--navy); }
+::-webkit-scrollbar-thumb { background: var(--navy3); border-radius: 3px; }
+
+@media (max-width: 900px) {
+  .hero { padding: 100px 24px 60px; }
+  .hero-visual { display: none; }
+  .section, .section-sm, .full-bleed { padding: 60px 24px; }
+  .div-line { margin: 0 24px; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  h2 { font-size: 32px; }
+  .nav { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">Avid Planning</div>
+  <div class="nav-sub">— A Vision for Jack Arnold, CFP®</div>
+  <div class="nav-links">
+    <a class="nav-link" href="#opportunity">Opportunity</a>
+    <a class="nav-link" href="#ai">AI Layer</a>
+    <a class="nav-link" href="#app">The App</a>
+    <a class="nav-link" href="#pivot">Pivot</a>
+    <a class="nav-link" href="#revenue">Revenue</a>
+    <a class="nav-link" href="#roadmap">Roadmap</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">📋 Strategic Vision · Prepared by Frank Lujan</div>
+    <h1>
+      Avid Planning<br>
+      in the age of<br>
+      <em>AI-first finance.</em>
+    </h1>
+    <p class="hero-sub">Jack, you've built something real — 13 years, loyal clients, fiduciary trust, a strong reputation in St. Pete. Here's what that foundation can become when you layer AI, technology, and a consulting flywheel on top of it.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="#opportunity">See the Vision →</a>
+      <a class="btn-secondary" href="#revenue">Revenue Model</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="hero-card-label">Current AUM potential path</div>
+      <div class="hero-card-val">$50M → $500M</div>
+      <div class="hero-card-sub">With AI-assisted client expansion + consulting revenue</div>
+    </div>
+    <div class="hero-mini-cards">
+      <div class="mini-card">
+        <div class="mini-val" style="color:var(--teal2);">3x</div>
+        <div class="mini-lbl">Client Capacity</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-val" style="color:var(--gold);">4+</div>
+        <div class="mini-lbl">Revenue Streams</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-val" style="color:var(--purple);">B2B</div>
+        <div class="mini-lbl">New Market</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-val" style="color:var(--green);">Year 3</div>
+        <div class="mini-lbl">Exit Option</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="div-line"></div>
+
+<!-- WHERE YOU ARE -->
+<div class="section">
+  <div class="tag">The Foundation</div>
+  <h2>What you've built is the<br>hardest part.</h2>
+  <p class="section-sub">Most advisors spend their careers trying to earn what you already have. The question now is — what do you build on top of it?</p>
+
+  <div class="grid-4" style="margin-bottom:48px;">
+    <div class="card">
+      <div class="card-ico">🤝</div>
+      <div class="card-title">Deep Client Trust</div>
+      <div class="card-desc">17-year client relationships. "Peace of mind we never thought possible." That trust is a moat most fintechs can't buy.</div>
+    </div>
+    <div class="card">
+      <div class="card-ico">📜</div>
+      <div class="card-title">CFP® + Fiduciary</div>
+      <div class="card-desc">In a world of robo-advisors and AI tools, your credentials and legal fiduciary duty are a genuine differentiator.</div>
+    </div>
+    <div class="card">
+      <div class="card-ico">🎯</div>
+      <div class="card-title">Clear Niche</div>
+      <div class="card-desc">Gen X & Y professionals. Building wealth, not preserving it. High earning potential, high tech comfort, hungry for guidance.</div>
+    </div>
+    <div class="card">
+      <div class="card-ico">👥</div>
+      <div class="card-title">Team Model</div>
+      <div class="card-desc">David + Jack. Two-advisor team approach is already built. Scales to a firm model naturally as you add AIs and junior advisors.</div>
+    </div>
+  </div>
+
+  <div class="quote-block">
+    <div class="quote-text">"David and Jack are absolutely amazing. I have referred friends and coworkers to them and they are impressed as well." — Craig K., 17-year client</div>
+    <div class="quote-attr">This is not just a business. This is a referral engine waiting to be systematized.</div>
+  </div>
+</div>
+
+<div class="div-line"></div>
+
+<!-- THE OPPORTUNITY -->
+<section id="opportunity">
+  <div class="section">
+    <div class="tag">Market Timing</div>
+    <h2>The industry is about to<br>be <em style="color:var(--teal2);">completely disrupted.</em></h2>
+    <p class="section-sub">AI is not replacing financial advisors. It's creating a massive gap between advisors who use it and those who don't — and it's happening right now.</p>
+
+    <div class="stats-row" style="margin-bottom:56px;">
+      <div class="stat-box">
+        <div class="stat-val" style="color:var(--teal2);">$30T</div>
+        <div class="stat-lbl">Great Wealth Transfer</div>
+        <div class="stat-note">Millennials inheriting by 2030</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:var(--gold);">67%</div>
+        <div class="stat-lbl">Advisors Not Using AI</div>
+        <div class="stat-note">Your competitive opening</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:var(--purple);">78%</div>
+        <div class="stat-lbl">Millennials Want Digital First</div>
+        <div class="stat-note">Your exact target client</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:var(--green);">$24B</div>
+        <div class="stat-lbl">Wealthtech Market by 2028</div>
+        <div class="stat-note">Fastest growing sector in finance</div>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="opp-card teal">
+        <div class="opp-num">01</div>
+        <div class="opp-ico">🤖</div>
+        <div class="opp-title">AI-Augmented Advisory</div>
+        <span class="opp-tag tag-easy">Do This Now</span>
+        <div class="opp-desc">Layer AI tools into your existing practice. Serve 3x the clients with the same team. AI handles prep work, data analysis, report drafts. You handle the relationship and decisions.</div>
+        <div class="opp-revenue">
+          <div>
+            <div class="opp-rev-val">3x capacity</div>
+            <div class="opp-rev-lbl">Same overhead</div>
+          </div>
+          <div class="opp-timeline">Months 1–3</div>
+        </div>
+      </div>
+
+      <div class="opp-card gold">
+        <div class="opp-num">02</div>
+        <div class="opp-ico">📱</div>
+        <div class="opp-title">Avid Client App</div>
+        <span class="opp-tag tag-medium">High Impact</span>
+        <div class="opp-desc">A white-labeled client portal with your brand. Dashboard showing net worth, goals progress, action items, AI-generated monthly summaries. Makes clients feel premium and stickier.</div>
+        <div class="opp-revenue">
+          <div>
+            <div class="opp-rev-val">+$150/mo/client</div>
+            <div class="opp-rev-lbl">Premium tier upsell</div>
+          </div>
+          <div class="opp-timeline">Month 4–8</div>
+        </div>
+      </div>
+
+      <div class="opp-card blue">
+        <div class="opp-num">03</div>
+        <div class="opp-ico">📚</div>
+        <div class="opp-title">Financial Education Platform</div>
+        <span class="opp-tag tag-medium">Scalable</span>
+        <div class="opp-desc">Courses, webinars, and digital content for your Gen X/Y niche. "Smart Money Habits" — your philosophy, packaged. Sells while you sleep. Feeds your pipeline with warm leads.</div>
+        <div class="opp-revenue">
+          <div>
+            <div class="opp-rev-val">$50K–$200K/yr</div>
+            <div class="opp-rev-lbl">Passive income</div>
+          </div>
+          <div class="opp-timeline">Month 6–12</div>
+        </div>
+      </div>
+
+      <div class="opp-card purple">
+        <div class="opp-num">04</div>
+        <div class="opp-ico">🏢</div>
+        <div class="opp-title">B2B Employee Benefits Consulting</div>
+        <span class="opp-tag tag-big">Big Market</span>
+        <div class="opp-desc">Partner with companies in St. Pete / Tampa to offer financial wellness programs to their employees. One corporate deal = 50+ potential clients. HR directors are actively looking for this.</div>
+        <div class="opp-revenue">
+          <div>
+            <div class="opp-rev-val">$5K–$20K/contract</div>
+            <div class="opp-rev-lbl">Per employer</div>
+          </div>
+          <div class="opp-timeline">Month 6–12</div>
+        </div>
+      </div>
+
+      <div class="opp-card green">
+        <div class="opp-num">05</div>
+        <div class="opp-ico">🎓</div>
+        <div class="opp-title">Advisor Consulting Practice</div>
+        <span class="opp-tag tag-big">Pivot Option</span>
+        <div class="opp-desc">You become the advisor that advisors hire. Teach other CFPs how to integrate AI, build systems, grow their practice. Your 13 years of experience becomes a product. $5K–$25K per client advisor.</div>
+        <div class="opp-revenue">
+          <div>
+            <div class="opp-rev-val">$500K+ yr</div>
+            <div class="opp-rev-lbl">At 20–40 advisor clients</div>
+          </div>
+          <div class="opp-timeline">Year 2+</div>
+        </div>
+      </div>
+
+      <div class="opp-card teal">
+        <div class="opp-num">06</div>
+        <div class="opp-ico">🚀</div>
+        <div class="opp-title">Avid OS — SaaS for Advisors</div>
+        <span class="opp-tag tag-pivot">Bold Move</span>
+        <div class="opp-desc">Take your consulting knowledge and productize it into a software platform for independent advisors. Your own AI-powered practice management tool. This is the venture-backed path if you want it.</div>
+        <div class="opp-revenue">
+          <div>
+            <div class="opp-rev-val">$5M–$50M</div>
+            <div class="opp-rev-lbl">Exit potential</div>
+          </div>
+          <div class="opp-timeline">Year 3+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div-line"></div>
+
+<!-- AI LAYER -->
+<section id="ai">
+  <div class="section">
+    <div class="tag">The AI Advantage</div>
+    <h2>What AI actually does<br>for an advisor like you.</h2>
+    <p class="section-sub">Not buzzwords. Specific capabilities that cut hours from your week and make your clients feel like they have a team of 10 working for them.</p>
+
+    <div class="grid-2" style="gap:14px;">
+      <div class="ai-feature">
+        <div class="ai-feature-ico">📊</div>
+        <div>
+          <div class="ai-feature-title">Automated Client Prep Packets <span class="ai-new">Save 3 hrs/client</span></div>
+          <div class="ai-feature-desc">Before every review meeting, AI pulls together portfolio performance, goal progress, market context, and 3 agenda items tailored to that client's situation. You review and show up ready.</div>
+        </div>
+      </div>
+      <div class="ai-feature">
+        <div class="ai-feature-ico">💬</div>
+        <div>
+          <div class="ai-feature-title">AI Client Inbox Assistant <span class="ai-new">After hours coverage</span></div>
+          <div class="ai-feature-desc">Client emails at 11pm asking about market volatility get an intelligent, empathetic first response. You see the thread in the morning and add your personal touch. Clients feel heard 24/7.</div>
+        </div>
+      </div>
+      <div class="ai-feature">
+        <div class="ai-feature-ico">📈</div>
+        <div>
+          <div class="ai-feature-title">Portfolio Anomaly Detection <span class="ai-new">Risk management</span></div>
+          <div class="ai-feature-desc">AI monitors all client portfolios daily. Flags drift, tax loss harvesting opportunities, rebalancing needs, and life event triggers. You focus on the outliers — AI watches everything else.</div>
+        </div>
+      </div>
+      <div class="ai-feature">
+        <div class="ai-feature-ico">📝</div>
+        <div>
+          <div class="ai-feature-title">Financial Plan Drafting <span class="ai-new">10x faster</span></div>
+          <div class="ai-feature-desc">Input client data → AI generates a complete first-draft financial plan with projections, scenarios, and recommendations. You edit and personalize. What took 6 hours takes 1.</div>
+        </div>
+      </div>
+      <div class="ai-feature">
+        <div class="ai-feature-ico">🎯</div>
+        <div>
+          <div class="ai-feature-title">Proactive Client Outreach <span class="ai-new">Referral engine</span></div>
+          <div class="ai-feature-desc">AI identifies which clients haven't heard from you recently, cross-references life events (job changes, marriages, new babies via LinkedIn), and drafts personalized check-in messages for your review.</div>
+        </div>
+      </div>
+      <div class="ai-feature">
+        <div class="ai-feature-ico">🔮</div>
+        <div>
+          <div class="ai-feature-title">Scenario Modeling in Seconds <span class="ai-new">Client WOW factor</span></div>
+          <div class="ai-feature-desc">"What if I buy a rental property?" — AI runs 5 scenarios live in your meeting. "What if I retire 3 years early?" — same. Clients leave meetings feeling like they have a supercomputer working for them.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div-line"></div>
+
+<!-- THE APP -->
+<section id="app">
+  <div class="section">
+    <div class="tag">The Client App</div>
+    <h2>Your brand in every<br>client's pocket.</h2>
+    <p class="section-sub">A white-labeled app that makes Avid Planning feel like a premium fintech — without you having to build the whole thing. Your clients stay longer, refer more, and pay more.</p>
+
+    <div class="grid-2" style="align-items:start;">
+      <div>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:32px;">
+          <div class="ai-feature">
+            <div class="ai-feature-ico" style="background:var(--gold2);border-color:rgba(245,158,11,.2);">🏦</div>
+            <div>
+              <div class="ai-feature-title">Live Net Worth Dashboard</div>
+              <div class="ai-feature-desc">All accounts aggregated. Clients see their real financial picture in real time. Not just investments — everything.</div>
+            </div>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-ico" style="background:var(--gold2);border-color:rgba(245,158,11,.2);">🎯</div>
+            <div>
+              <div class="ai-feature-title">Goal Progress Tracking</div>
+              <div class="ai-feature-desc">Retirement date countdown. College fund tracker. Emergency fund gauge. Visual, motivating, and sticky.</div>
+            </div>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-ico" style="background:var(--gold2);border-color:rgba(245,158,11,.2);">📬</div>
+            <div>
+              <div class="ai-feature-title">AI Monthly Summary</div>
+              <div class="ai-feature-desc">"Here's what happened to your money this month and what we're watching." Personalized, in plain English. Under your brand.</div>
+            </div>
+          </div>
+          <div class="ai-feature">
+            <div class="ai-feature-ico" style="background:var(--gold2);border-color:rgba(245,158,11,.2);">📅</div>
+            <div>
+              <div class="ai-feature-title">Direct Scheduling + Secure Docs</div>
+              <div class="ai-feature-desc">Book meetings, upload statements, review plans — all in one branded place. No more email tag.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--navy2);border:1px solid var(--sep);border-radius:12px;padding:20px;">
+          <div style="font-size:12px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:.7px;margin-bottom:12px;">Build Options</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;">
+              <span style="color:var(--teal2);">→</span>
+              <span><strong>White-label existing platforms</strong> — Orion, Wealth Access, AdvisorEngine. Fast, ~$500–2K/mo.</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;">
+              <span style="color:var(--teal2);">→</span>
+              <span><strong>Custom-built by Crafted Systems</strong> — Full ownership, your brand, your data, your moat.</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13.5px;">
+              <span style="color:var(--teal2);">→</span>
+              <span><strong>Hybrid</strong> — White-label backend, custom front-end with your branding and AI features.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-preview">
+        <div class="app-chrome">
+          <div class="chrome-dot" style="background:#f87171;"></div>
+          <div class="chrome-dot" style="background:#fbbf24;"></div>
+          <div class="chrome-dot" style="background:#34d399;"></div>
+          <div style="flex:1;text-align:center;font-size:11.5px;color:var(--t3);">Avid Planning · Client Portal</div>
+        </div>
+        <div class="app-body">
+          <div class="app-header">
+            <div>
+              <div class="app-title">Good morning, Sarah. 👋</div>
+              <div class="app-sub">Your financial health is looking strong this month.</div>
+            </div>
+            <div style="background:var(--teal3);border:1px solid rgba(13,148,136,.2);border-radius:8px;padding:8px 14px;text-align:right;">
+              <div style="font-size:18px;font-weight:800;color:var(--teal2);">$847,340</div>
+              <div style="font-size:10px;color:var(--t3);">Net Worth ↑ 4.2% this yr</div>
+            </div>
+          </div>
+          <div class="app-stats">
+            <div class="app-stat">
+              <div class="app-stat-val" style="color:var(--teal2);">$612K</div>
+              <div class="app-stat-lbl">Investments</div>
+            </div>
+            <div class="app-stat">
+              <div class="app-stat-val" style="color:var(--gold);">87%</div>
+              <div class="app-stat-lbl">Retirement</div>
+            </div>
+            <div class="app-stat">
+              <div class="app-stat-val" style="color:var(--green);">On Track</div>
+              <div class="app-stat-lbl">Goals</div>
+            </div>
+            <div class="app-stat">
+              <div class="app-stat-val" style="color:var(--purple);">Apr 12</div>
+              <div class="app-stat-lbl">Next Review</div>
+            </div>
+          </div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--t3);margin-bottom:8px;">Action Items from Jack</div>
+          <div class="app-list">
+            <div class="app-item">
+              <div class="app-item-dot" style="background:var(--teal2);"></div>
+              <div class="app-item-name">Max out Roth IRA before April 15</div>
+              <span class="app-item-badge" style="background:var(--teal3);color:var(--teal2);">High</span>
+            </div>
+            <div class="app-item">
+              <div class="app-item-dot" style="background:var(--gold);"></div>
+              <div class="app-item-name">Review beneficiary designations</div>
+              <span class="app-item-badge" style="background:var(--gold2);color:var(--gold);">Medium</span>
+            </div>
+            <div class="app-item">
+              <div class="app-item-dot" style="background:var(--t3);"></div>
+              <div class="app-item-name">Upload Q1 pay stubs for tax planning</div>
+              <span class="app-item-badge" style="background:var(--navy3);color:var(--t3);">Low</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div-line"></div>
+
+<!-- PIVOT / CONSULTING -->
+<section id="pivot">
+  <div class="section">
+    <div class="tag">The Big Moves</div>
+    <h2>Two paths to a<br>very different <em style="color:var(--gold);">future.</em></h2>
+    <p class="section-sub">You don't have to choose right now. But understanding the destination changes how you build today.</p>
+
+    <div class="grid-2">
+
+      <!-- Path A -->
+      <div style="background:var(--navy2);border:1px solid rgba(13,148,136,.2);border-radius:16px;overflow:hidden;">
+        <div style="background:linear-gradient(135deg,rgba(13,148,136,.12),rgba(13,148,136,.04));padding:28px 28px 20px;border-bottom:1px solid var(--sep);">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--teal2);margin-bottom:8px;">Path A — Grow the Practice</div>
+          <div style="font-size:22px;font-weight:800;margin-bottom:8px;">AI-Powered Wealth Firm</div>
+          <div style="font-size:13.5px;color:var(--t2);">Scale Avid Planning into a regional powerhouse using AI to serve more clients with the same team. Add a junior advisor. Expand corporate benefits. Hit $200M AUM.</div>
+        </div>
+        <div style="padding:24px 28px;">
+          <div class="tl-tasks">
+            <div class="tl-task">Integrate AI tools into daily operations (Q1)</div>
+            <div class="tl-task">Launch client app — premium tier at +$150/mo (Q2)</div>
+            <div class="tl-task">Add B2B corporate benefits vertical (Q3)</div>
+            <div class="tl-task">Hire first junior advisor / AI-assisted (Q4)</div>
+            <div class="tl-task">Launch financial education content platform (Year 2)</div>
+            <div class="tl-task">$200M AUM, 3 advisors, automated client ops (Year 3)</div>
+          </div>
+          <div style="margin-top:20px;padding:16px;background:var(--navy3);border-radius:10px;">
+            <div style="font-size:12px;color:var(--t3);margin-bottom:6px;">Revenue at Year 3</div>
+            <div style="font-size:24px;font-weight:800;color:var(--teal2);">$1.8M – $2.4M/yr</div>
+            <div style="font-size:12px;color:var(--t2);">Fees + app revenue + education + corporate contracts</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Path B -->
+      <div style="background:var(--navy2);border:1px solid rgba(245,158,11,.2);border-radius:16px;overflow:hidden;">
+        <div style="background:linear-gradient(135deg,rgba(245,158,11,.1),rgba(245,158,11,.03));padding:28px 28px 20px;border-bottom:1px solid var(--sep);">
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--gold);margin-bottom:8px;">Path B — Build the Platform</div>
+          <div style="font-size:22px;font-weight:800;margin-bottom:8px;">Avid OS — SaaS for Advisors</div>
+          <div style="font-size:13.5px;color:var(--t2);">Use your 13 years of operational knowledge to build the tools you wish you had. Sell them to other independent advisors. Your practice becomes the proof of concept. The software becomes the business.</div>
+        </div>
+        <div style="padding:24px 28px;">
+          <div class="tl-tasks">
+            <div class="tl-task">AI-augment your own practice — prove it works (Q1–Q2)</div>
+            <div class="tl-task">Document your system — the "Avid Method" (Q2)</div>
+            <div class="tl-task">Launch advisor consulting program — 10 clients @ $5K (Q3)</div>
+            <div class="tl-task">Build MVP of Avid OS with Crafted Systems (Q4)</div>
+            <div class="tl-task">Beta test with 25 advisor firms (Year 2)</div>
+            <div class="tl-task">Raise seed round or bootstrap to 100 advisors (Year 2–3)</div>
+          </div>
+          <div style="margin-top:20px;padding:16px;background:var(--navy3);border-radius:10px;">
+            <div style="font-size:12px;color:var(--t3);margin-bottom:6px;">Revenue + Exit potential at Year 3</div>
+            <div style="font-size:24px;font-weight:800;color:var(--gold);">$5M – $30M+</div>
+            <div style="font-size:12px;color:var(--t2);">SaaS ARR + advisory practice + acquisition potential</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:28px;background:var(--navy2);border:1px solid var(--sep);border-radius:14px;padding:24px 28px;display:flex;align-items:flex-start;gap:16px;">
+      <div style="font-size:24px;">💡</div>
+      <div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:6px;">The Smart Play: Run Both in Parallel</div>
+        <div style="font-size:13.5px;color:var(--t2);line-height:1.6;">Path A funds Path B. Use AI to grow your practice and increase margins. Take the extra profit and time and begin building the consulting/platform business. By Year 2 you'll know which one you want to double down on.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div-line"></div>
+
+<!-- COMPETITIVE ADVANTAGE -->
+<div class="section">
+  <div class="tag">Competitive Position</div>
+  <h2>Where Avid wins in an<br>AI-first market.</h2>
+  <p class="section-sub">Robo-advisors have low cost. Big firms have brand. You have something neither can replicate.</p>
+
+  <div style="background:var(--navy2);border:1px solid var(--sep);border-radius:16px;overflow:hidden;margin-bottom:40px;">
+    <div class="comp-row" style="border-bottom:1px solid var(--sep);">
+      <div class="comp-header">Provider</div>
+      <div class="comp-header">Human + AI Hybrid</div>
+      <div class="comp-header">Fiduciary</div>
+      <div class="comp-header">Behavioral Coaching</div>
+      <div class="comp-header">Gen X/Y Focus</div>
+    </div>
+    <div class="comp-row avid-row">
+      <div class="comp-cell comp-name">✦ Avid Planning (evolved)</div>
+      <div class="comp-cell"><span class="check-y">✓</span></div>
+      <div class="comp-cell"><span class="check-y">✓</span></div>
+      <div class="comp-cell"><span class="check-y">✓</span></div>
+      <div class="comp-cell"><span class="check-y">✓</span></div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell comp-name">Betterment / Wealthfront</div>
+      <div class="comp-cell"><span class="check-n">✗</span></div>
+      <div class="comp-cell"><span class="check-y">✓</span></div>
+      <div class="comp-cell"><span class="check-n">✗</span></div>
+      <div class="comp-cell"><span class="check-p">~</span></div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell comp-name">Vanguard Personal Advisor</div>
+      <div class="comp-cell"><span class="check-p">~</span></div>
+      <div class="comp-cell"><span class="check-y">✓</span></div>
+      <div class="comp-cell"><span class="check-n">✗</span></div>
+      <div class="comp-cell"><span class="check-n">✗</span></div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell comp-name">Traditional Big Firm Advisor</div>
+      <div class="comp-cell"><span class="check-n">✗</span></div>
+      <div class="comp-cell"><span class="check-n">✗</span></div>
+      <div class="comp-cell"><span class="check-p">~</span></div>
+      <div class="comp-cell"><span class="check-n">✗</span></div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell comp-name">DIY (Reddit + Index Funds)</div>
+      <div class="comp-cell"><span class="check-n">✗</span></div>
+      <div class="comp-cell"><span class="check-n">✗</span></div>
+      <div class="comp-cell"><span class="check-n">✗</span></div>
+      <div class="comp-cell"><span class="check-y">✓</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="div-line"></div>
+
+<!-- REVENUE MODEL -->
+<section id="revenue">
+  <div class="section">
+    <div class="tag">Revenue Model</div>
+    <h2>What the business looks<br>like at full <em style="color:var(--green);">build-out.</em></h2>
+    <p class="section-sub">Conservative projections. Multiple streams. Most are additive on your existing practice — not replacements.</p>
+
+    <table class="rev-table" style="margin-bottom:40px;">
+      <thead>
+        <tr>
+          <th>Revenue Stream</th>
+          <th>Model</th>
+          <th>Year 1</th>
+          <th>Year 2</th>
+          <th>Year 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Advisory Fees (AUM)</td>
+          <td><span class="rev-tag tag-easy">Existing</span></td>
+          <td>Baseline</td>
+          <td>+40%</td>
+          <td class="rev-highlight">+100%</td>
+        </tr>
+        <tr>
+          <td>Client App Premium Tier</td>
+          <td><span class="rev-tag" style="background:rgba(245,158,11,.12);color:var(--gold);">$150/mo</span></td>
+          <td>$18K</td>
+          <td>$54K</td>
+          <td class="rev-highlight">$108K</td>
+        </tr>
+        <tr>
+          <td>Financial Education Platform</td>
+          <td><span class="rev-tag" style="background:rgba(139,92,246,.12);color:var(--purple);">Digital</span></td>
+          <td>$0</td>
+          <td>$60K</td>
+          <td class="rev-highlight">$180K</td>
+        </tr>
+        <tr>
+          <td>Corporate Benefits Consulting</td>
+          <td><span class="rev-tag" style="background:rgba(59,130,246,.12);color:var(--blue);">B2B</span></td>
+          <td>$0</td>
+          <td>$80K</td>
+          <td class="rev-highlight">$240K</td>
+        </tr>
+        <tr>
+          <td>Advisor Consulting Program</td>
+          <td><span class="rev-tag" style="background:rgba(16,185,129,.12);color:var(--green);">Services</span></td>
+          <td>$0</td>
+          <td>$150K</td>
+          <td class="rev-highlight">$500K</td>
+        </tr>
+        <tr>
+          <td>Avid OS SaaS (if pursued)</td>
+          <td><span class="rev-tag" style="background:rgba(245,158,11,.12);color:var(--gold);">SaaS</span></td>
+          <td>$0</td>
+          <td>$0</td>
+          <td class="rev-highlight">$300K ARR</td>
+        </tr>
+        <tr class="rev-total-row" style="background:var(--navy3)!important;">
+          <td style="color:var(--teal2);">Total New Revenue</td>
+          <td></td>
+          <td style="color:var(--teal2);">+$18K</td>
+          <td style="color:var(--teal2);">+$344K</td>
+          <td class="rev-highlight" style="font-size:17px;">+$1.3M+</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="div-line"></div>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="section">
+    <div class="tag">The Roadmap</div>
+    <h2>90 days to a completely<br>different practice.</h2>
+    <p class="section-sub">Sequenced. Each step builds on the last. Nothing requires a massive investment to start.</p>
+
+    <div class="grid-2">
+      <div class="timeline-wrap">
+
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--teal2);box-shadow:0 0 10px rgba(13,148,136,.4);"></div>
+          <div class="tl-phase">Month 1–2 · Foundation</div>
+          <div class="tl-title">🔧 AI In the Practice</div>
+          <div class="tl-tasks">
+            <div class="tl-task">Pick 2–3 AI tools: Claude + FinanceGPT + Copilot Money</div>
+            <div class="tl-task">Build automated client prep workflow</div>
+            <div class="tl-task">Set up AI email drafting assistant</div>
+            <div class="tl-task">Measure: how many hours did you save?</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--gold);"></div>
+          <div class="tl-phase">Month 3–4 · Client Experience</div>
+          <div class="tl-title">📱 Launch the Client App</div>
+          <div class="tl-tasks">
+            <div class="tl-task">Choose white-label platform or custom build</div>
+            <div class="tl-task">Onboard top 20 clients — get feedback</div>
+            <div class="tl-task">Roll out premium tier at $150/mo</div>
+            <div class="tl-task">Use as a referral and retention tool</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--blue);"></div>
+          <div class="tl-phase">Month 5–6 · New Markets</div>
+          <div class="tl-title">🏢 B2B + Content Launch</div>
+          <div class="tl-tasks">
+            <div class="tl-task">Identify 5 target employers in St. Pete / Tampa</div>
+            <div class="tl-task">Pitch financial wellness program to HR directors</div>
+            <div class="tl-task">Launch first digital course or webinar series</div>
+            <div class="tl-task">Begin building email list and YouTube presence</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="timeline-wrap">
+
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--purple);"></div>
+          <div class="tl-phase">Month 7–9 · Consulting Practice</div>
+          <div class="tl-title">🎓 Advisor-to-Advisor</div>
+          <div class="tl-tasks">
+            <div class="tl-task">Document the "Avid Method" as a framework</div>
+            <div class="tl-task">Soft launch to 5 advisor beta clients</div>
+            <div class="tl-task">Price at $5K setup + $500/mo retainer</div>
+            <div class="tl-task">Get testimonials and refine the offer</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--green);"></div>
+          <div class="tl-phase">Month 10–12 · Scale Decision</div>
+          <div class="tl-title">🚀 Choose Your Path</div>
+          <div class="tl-tasks">
+            <div class="tl-task">Review all new revenue streams — what's performing?</div>
+            <div class="tl-task">Decide: Scale the practice or build the platform</div>
+            <div class="tl-task">Hire first team member or begin SaaS development</div>
+            <div class="tl-task">Set 3-year vision and work backward</div>
+          </div>
+        </div>
+
+        <div class="tl-item" style="margin-bottom:0;">
+          <div class="tl-dot" style="background:var(--gold);box-shadow:0 0 10px rgba(245,158,11,.4);"></div>
+          <div class="tl-phase">Year 2–3 · The Outcome</div>
+          <div class="tl-title">💰 A Very Different Business</div>
+          <div class="tl-tasks">
+            <div class="tl-task">$200M+ AUM with AI-assisted client ops</div>
+            <div class="tl-task">Multiple revenue streams beyond advisory fees</div>
+            <div class="tl-task">A brand that attracts advisors, not just clients</div>
+            <div class="tl-task">An asset worth acquiring — or a platform worth funding</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div-line"></div>
+
+<!-- FIRST 30 DAYS -->
+<div class="section-sm">
+  <div class="tag">Start Here</div>
+  <h2>What to do in the<br>next <em style="color:var(--teal2);">30 days.</em></h2>
+  <p class="section-sub">No major investment. No big decisions yet. Just prove the concept and see where it leads.</p>
+
+  <div class="grid-3">
+    <div class="card" style="border-color:rgba(13,148,136,.2);">
+      <div style="font-size:13px;font-weight:700;color:var(--teal2);margin-bottom:12px;">Week 1</div>
+      <div class="card-title">🤖 Set Up AI Tools</div>
+      <div class="card-desc">Subscribe to Claude Pro ($20/mo). Try FinancialAdvisorAI or Copilot Money. Use AI to prep for 3 client meetings. Measure the time you saved.</div>
+    </div>
+    <div class="card" style="border-color:rgba(245,158,11,.2);">
+      <div style="font-size:13px;font-weight:700;color:var(--gold);margin-bottom:12px;">Week 2–3</div>
+      <div class="card-title">📊 Audit Your Client Data</div>
+      <div class="card-desc">Which clients are underserved? Which are most profitable? Where are the referral opportunities? AI can process this in minutes — manually it would take days.</div>
+    </div>
+    <div class="card" style="border-color:rgba(139,92,246,.2);">
+      <div style="font-size:13px;font-weight:700;color:var(--purple);margin-bottom:12px;">Week 4</div>
+      <div class="card-title">💬 Have 5 Conversations</div>
+      <div class="card-desc">Talk to 5 of your best clients about what they wish the experience included. And talk to 2 other advisors you respect about how they're handling AI. The answers will shape everything.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="tag" style="justify-content:center;">The Opportunity</div>
+  <h2>The advisors who move<br>now will own the decade.</h2>
+  <p>You've already built the trust, the niche, and the reputation. The question is: what do you build on top of it?</p>
+  <div class="cta-btns">
+    <a class="btn-primary" href="https://avidplanning.com" target="_blank">Visit Avid Planning →</a>
+  </div>
+  <div style="margin-top:48px;padding-top:32px;border-top:1px solid var(--sep);font-size:12px;color:var(--t3);line-height:1.8;">
+    Prepared by <strong style="color:var(--t2);">Frank Lujan</strong> · Crafted Systems · March 2026<br>
+    Built with strategic analysis, industry data, and Ada 🦉 · AI-powered business intelligence
+  </div>
+</div>
+
+</body>
+</html>
